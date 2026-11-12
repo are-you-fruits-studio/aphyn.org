@@ -34,7 +34,7 @@ cargo clippy --target wasm32-unknown-unknown -- -D warnings
 
 | Path | What it is |
 |---|---|
-| `src/pages/` | Home, Examples, Roadmap, 404 |
+| `src/pages/` | Home, Docs, Examples, Roadmap, Releases, 404 |
 | `src/components/` | Header, footer and the Aphyn design system components (logo, badge, card, tabs, code block, callout) |
 | `src/i18n.rs` | Language registry and the translation lookup |
 | `src/route.rs` | Routes: the default language at `/`, the others under `/<code>/` |

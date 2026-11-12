@@ -9,7 +9,7 @@ set -euo pipefail
 
 dist="${1:-dist}"
 default_locale="en"          # keep in sync with the first entry of LOCALES in src/i18n.rs
-pages=(examples roadmap)     # every route except home; keep in sync with src/route.rs
+pages=(docs examples roadmap releases)  # every route except home; keep in sync with src/route.rs
 
 index="$dist/index.html"
 [ -f "$index" ] || { echo "no $index — run trunk build first" >&2; exit 1; }

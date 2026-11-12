@@ -50,17 +50,22 @@ pub fn header(props: &HeaderProps) -> Html {
         Theme::Light => ("moon", lang.t("theme.to_dark")),
     };
 
-    let nav_links = |class: &'static str, onnavigate: Option<Callback<()>>| {
+    // Every header link stays on this site. Docs and Releases are pages of
+    // their own that introduce the external docs and GitHub releases.
+    let nav_links = |onnavigate: Option<Callback<()>>| {
+        let link = |target: Page, key: &'static str| {
+            html! {
+                <NavLink to={target.route(lang)} current={page == target} onnavigate={onnavigate.clone()}>
+                    { lang.t(key) }
+                </NavLink>
+            }
+        };
         html! {
             <>
-                <a {class} href={DOCS_URL}>{ lang.t("nav.docs") }</a>
-                <NavLink class={class} to={Page::Examples.route(lang)} current={page == Page::Examples} onnavigate={onnavigate.clone()}>
-                    { lang.t("nav.examples") }
-                </NavLink>
-                <NavLink class={class} to={Page::Roadmap.route(lang)} current={page == Page::Roadmap} onnavigate={onnavigate}>
-                    { lang.t("nav.roadmap") }
-                </NavLink>
-                <a {class} href={RELEASES_URL}>{ lang.t("nav.releases") }</a>
+                { link(Page::Docs, "nav.docs") }
+                { link(Page::Examples, "nav.examples") }
+                { link(Page::Roadmap, "nav.roadmap") }
+                { link(Page::Releases, "nav.releases") }
             </>
         }
     };
@@ -74,7 +79,7 @@ pub fn header(props: &HeaderProps) -> Html {
                     <span class="sr-only">{ lang.t("nav.home") }</span>
                 </NavLink>
                 <nav class="nav-main" aria-label={lang.t("nav.label")}>
-                    { nav_links("", None) }
+                    { nav_links(None) }
                 </nav>
                 <div class="header-spacer"></div>
                 <div class="header-tools">
@@ -98,7 +103,7 @@ pub fn header(props: &HeaderProps) -> Html {
                 </div>
             </div>
             <nav id="mobile-menu" class={classes!("mobile-menu", menu_open.then_some("open"))} aria-label={lang.t("nav.label")}>
-                { nav_links("", Some(close_menu.clone())) }
+                { nav_links(Some(close_menu.clone())) }
                 <div class="mobile-menu-foot">
                     <LangSwitch {page} {lang} onnavigate={close_menu} />
                     <a class="mono-link" href={REPO_URL}>

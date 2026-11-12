@@ -3,8 +3,8 @@ use yew::prelude::*;
 use super::{with_code, PageProps};
 use crate::components::badge::{Badge, Tone};
 use crate::components::callout::Callout;
-use crate::components::header::RELEASES_URL;
 use crate::components::icon::Icon;
+use crate::components::nav_link::NavLink;
 use crate::releases::{format_date, Releases};
 
 /// How many releases the page lists.
@@ -75,15 +75,15 @@ pub fn roadmap(props: &PageProps) -> Html {
                         <p class="body" style="margin-bottom: 20px;">
                             { with_code(t("roadmap.releases.body.before"), "todos.md", t("roadmap.releases.body.after")) }
                         </p>
-                        <a class="more" href={RELEASES_URL}>
+                        <NavLink class="more" to={crate::route::Page::Releases.route(lang)}>
                             { t("roadmap.releases.all") }
-                            <Icon name="external-link" />
-                        </a>
+                            <Icon name="arrow-right" />
+                        </NavLink>
                     </div>
                     if releases.list.is_empty() {
                         <p class="body">{ t("roadmap.releases.empty") }</p>
                     } else {
-                        <ol class="releases">
+                        <ol class="releases highlight-first">
                             { for releases.list.iter().take(RECENT).map(|r| html! {
                                 <li>
                                     <a class="ver" href={r.url.clone()}>{ r.tag.clone() }</a>

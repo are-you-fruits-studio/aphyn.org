@@ -1,7 +1,6 @@
 use yew::prelude::*;
 
 use super::PageProps;
-use crate::components::header::DOCS_URL;
 use crate::components::icon::Icon;
 use crate::components::nav_link::NavLink;
 use crate::route::Page;
@@ -18,10 +17,10 @@ pub fn not_found(props: &PageProps) -> Html {
                 <p class="lead">{ t("nf.body") }</p>
                 <div class="btn-row">
                     <NavLink class="btn btn-primary" to={Page::Home.route(lang)}>{ t("nf.home") }</NavLink>
-                    <a class="btn btn-secondary" href={DOCS_URL}>
+                    <NavLink class="btn btn-secondary" to={Page::Docs.route(lang)}>
                         <Icon name="book-open" />
                         { t("nav.docs") }
-                    </a>
+                    </NavLink>
                 </div>
                 <p class="comment" style="margin-top: 40px;">{ t("nf.comment") }</p>
             </div>
