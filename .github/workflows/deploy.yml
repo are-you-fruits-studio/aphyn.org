@@ -1,0 +1,104 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Daily rebuild, so a new engine release shows up on the site without a commit.
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+  # The engine repository can trigger a rebuild right after a release.
+  repository_dispatch:
+    types: [aphyn-release]
+
+permissions:
+  contents: read
+
+# A newer push cancels a pull request build, but never a deploy in progress.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+# Third-party actions are pinned to full commit SHAs; Dependabot keeps them current.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+          targets: wasm32-unknown-unknown
+          components: clippy, rustfmt
+
+      - uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+
+      - uses: taiki-e/install-action@cfdb7ed4ccc7c7dce37759eae89dc5674b469b39 # v2.90.3
+        with:
+          tool: trunk@0.22.1,cargo-about@0.9.3
+
+      - name: Test
+        run: cargo test --locked
+
+      - name: Lint
+        run: |
+          cargo fmt --check
+          cargo clippy --locked --target wasm32-unknown-unknown -- -D warnings
+
+      - name: Fetch engine releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api 'repos/are-you-fruits-studio/aphyn/releases?per_page=30' \
+              --jq '[.[] | select(.draft == false and .prerelease == false)
+                    | {tag: .tag_name, name: (.name // ""), date: .published_at, url: .html_url}] | .[:8]' \
+              > releases.json; then
+            version="$(jq -r '.[0].tag // empty' releases.json)"
+          else
+            echo "::warning::Could not fetch engine releases; the site falls back to the built-in version."
+            echo '[]' > releases.json
+            version=""
+          fi
+          # Only a plain version tag may reach the build environment.
+          if [[ "$version" =~ ^v[0-9A-Za-z.+-]+$ ]]; then
+            echo "APHYN_VERSION=$version" >> "$GITHUB_ENV"
+          fi
+          echo "Latest engine release: ${version:-unknown}"
+
+      - name: Build
+        env:
+          # Keep the runner's paths out of the panic messages in the wasm.
+          RUSTFLAGS: --remap-path-prefix=${{ github.workspace }}=. --remap-path-prefix=/home/runner/.cargo/registry/src=crates --remap-path-prefix=/home/runner/.rustup=rustup
+        run: trunk build --release
+
+      - name: Add static routes, release data and licenses
+        run: |
+          scripts/static-routes.sh dist
+          cp releases.json dist/releases.json
+          cargo about generate about.hbs -o dist/licenses/third-party.html
+          rm -f dist/.trunk-lock
+          test -f dist/CNAME
+
+      - name: Upload site
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
