@@ -1,0 +1,195 @@
+# English — the default locale. Every other locale falls back to this file
+# for keys it does not have. Format: `key = value`, `\n` for a line break.
+# To add a language, copy this file to `<code>.txt` and see src/i18n.rs.
+
+title.home = Aphyn · a 3D game engine in Rust
+title.examples = Examples · Aphyn
+title.roadmap = Roadmap · Aphyn
+title.not_found = Page not found · Aphyn
+
+# Header and navigation
+nav.skip = Skip to content
+nav.home = Aphyn home
+nav.label = Main
+nav.language = Language
+nav.docs = Docs
+nav.examples = Examples
+nav.roadmap = Roadmap
+nav.releases = Releases
+nav.github = Aphyn on GitHub
+nav.menu = Menu
+theme.to_light = Switch to light theme
+theme.to_dark = Switch to dark theme
+
+# Footer
+footer.about = A 3D game engine in Rust. Grown in the Carpathians, runs on Windows and Linux.
+footer.engine = Engine
+footer.project = Project
+footer.studio = Studio
+footer.issues = Issues
+footer.contributing = Contributing
+footer.site_source = Site source
+footer.licenses = Licenses
+
+# Shared
+common.new = new
+status.works = Works today
+status.growing = In development
+status.not_yet = Not yet
+code.copy = Copy code
+code.copied = Copied
+code.tabs_label = Quick start code
+
+# Home — hero
+home.badge.early = Early development
+home.badge.latest = latest release
+home.hero.title = A 3D game engine in Rust, grown from real games.
+home.hero.lead = Aphyn is the engine are-you-fruits-studio builds for its own games — open for anyone to read, run and build on. ECS at the core, its own FFI-safe render API, one Cargo workspace of small crates.
+home.hero.cta = Run an example
+home.hero.source = Read the source
+home.meta.since = since May 2024
+home.showcase.alt = The showcase example running: three flocks of small lit shapes circle a glossy bilberry-blue sphere inside a dark tiled room. The corner counter reads 461 entities.
+home.showcase.caption = examples/showcase · 461 entities, real time
+
+# Home — why
+home.why.eyebrow = Why Aphyn
+home.why.title = Small, dark, and more useful than it looks.
+home.why.crates.title = Focused crates
+home.why.crates.body = One Cargo workspace of small crates, all source open. Read any part of the engine the moment you wonder how it works.
+home.why.data.title = Data first
+home.why.data.body = Systems declare the data they touch. The scheduler runs them in parallel across CPU cores.
+home.why.grown.title = Grown from real games
+home.why.grown.body = Aphyn started as the studio’s in-house Fruits Engine. Features land when one of our games needs them.
+home.why.license.title = Licensing that stays put
+home.why.license.body = MIT OR Apache-2.0. No royalties, no account, no terms that change under you.
+
+# Home — features
+home.features.eyebrow = In the box today
+home.features.title = Enough to get a small game moving.
+home.features.body = Everything here has a runnable example in the repo. If it isn’t on this list, it isn’t done yet — the roadmap says what is.
+home.features.more = Browse the examples
+feature.ecs.title = ECS
+feature.ecs.body = Systems scheduled by data access, run in parallel
+feature.render.title = Rendering
+feature.render.body = Own FFI-safe render API (wgpu under the hood): lit materials, normal maps, bloom, debug line gizmos
+feature.ui.title = UI
+feature.ui.body = Text, images, alignment, masks
+feature.audio.title = Audio
+feature.audio.body = Clip playback through cpal
+feature.collision.title = Collision detection
+feature.collision.body = Point, line, AABB, oriented box, sphere, triangle
+feature.prefabs.title = Prefabs and scenes
+feature.prefabs.body = Saved and loaded as JSON
+feature.build.title = Game builds
+feature.build.body = aphyn build packs a launcher, your game library and its assets
+feature.physics.title = Physics
+feature.physics.body = First cut in v0.21: rigid bodies and collision layers
+
+# Home — quick start
+home.quick.eyebrow = Quick start
+home.quick.title = Clone. Run. Ship a folder.
+home.quick.need.before = You need the latest stable Rust (edition 2024) — run
+home.quick.need.after = first. The first release build takes a few minutes.
+home.quick.pin = Aphyn isn’t on crates.io yet, and the API still changes between versions: pin a release tag when you build on it.
+home.quick.step1 = Run an example from the repo
+home.quick.step2 = Write your game as one crate in
+home.quick.step3 = Pack it with
+home.quick.more = Read the full guide
+code.tab.run = Run an example
+code.run.body = git clone https://github.com/are-you-fruits-studio/aphyn.git\ncd aphyn\ncargo run --release -p aphyn_example_cubes\n\n# Linux (Debian/Ubuntu) needs these first:\n# sudo apt-get install -y libasound2-dev libudev-dev pkg-config
+code.run.note = // swap cubes for boids, physics, showcase — see Examples.
+code.main.note = // setup_scene and spin are your systems. the cubes example has both.
+code.cargo.note = // use the same tag as the aphyn binary you build with.
+code.build.body = aphyn build path/to/my_game\n\n# my_game/builds/\n#   my_game        launcher, named after the folder\n#   lib_app        your game library\n#   assets/
+code.build.note = // needs cargo in PATH. on Windows keep the path short, no spaces.
+
+# Home — status
+home.status.eyebrow = Honest status
+home.status.title = Early development. The API will change.
+home.status.body = Fine for prototypes and for learning how an engine is put together. Pin a release tag if you build on Aphyn, and expect to follow breaking changes.
+home.status.editor.before = The editor, built on the engine itself. Release builds ship it as the
+home.status.editor.after = binary.
+home.status.physics = Physics — the first version landed in v0.21.
+home.status.not_yet = Animation · shadows · skybox · screen-space reflections · profiler · editor docking · live reload for assets and scripts
+home.status.comment = // we would rather under-promise. it compiles, at least.
+home.status.more = See the full roadmap
+
+# Home — the name
+home.name.word = а́фини · áfyny
+home.name.lede = The Carpathian word for bilberries — wild European blueberries. Small, dark, grows on rocks without asking anyone.
+home.name.note = The logo is that berry. Its three-armed calyx is also the X, Y and Z axes of a transform gizmo. Formerly Fruits Engine — same studio, fewer fruit puns. Still a few.
+
+# Home — follow along
+home.follow.title = Follow along
+home.follow.body = External pull requests aren’t accepted for now. Questions and bug reports are very welcome.
+home.follow.code.title = Read the code
+home.follow.code.body = Every commit since May 2024, examples included.
+home.follow.issues.eyebrow = Issues
+home.follow.issues.title = Ask or report a bug
+home.follow.issues.body = The one place for questions, crashes and odd behaviour.
+home.follow.docs.title = Documentation
+home.follow.docs.body = Getting started, building a game, how the crates fit together.
+
+# Examples
+examples.eyebrow = Examples
+examples.title = Every feature, running on your machine.
+examples.lead.before = Each example is its own crate under
+examples.lead.after = . Clone the repo, pick one, run it from the root. Reading the source is the fastest way to learn the API.
+examples.run = git clone https://github.com/are-you-fruits-studio/aphyn.git\ncd aphyn\ncargo run --release -p aphyn_example_cubes   # replace cubes with any name below
+examples.featured.title = Start here
+examples.featured.body = Flocking shapes, lit materials and bloom in one scene — hundreds of entities updated by parallel systems, with a live entity counter in the corner.
+examples.featured.more = Read the source
+examples.all = All examples
+example.cubes = The hello-world: a lit mesh that moves and rotates, plus an FPS log.
+example.ecs = Entities, components and resources with no window tricks — the ECS on its own.
+example.boids = Flocking: separation, steering and damping as small parallel systems.
+example.physics = Rigid bodies, collision layers, drag-to-throw. Space spawns more.
+example.collisions = Every collider shape, mouse raycasts and gizmo outlines.
+example.gizmos = Debug line gizmos and a free camera.
+example.material = A custom shader template and per-entity material tweaks.
+example.normals = Normal-mapped surfaces lit by a light that follows the cursor.
+example.bloom = One scene, bloom post-processing on bright materials.
+example.text = Text rendering, updated every frame.
+example.ui = UI layout: images, alignment and masks.
+example.audio_screen_saver = Clip playback through cpal, with the samples drawn on screen.
+example.showcase = The README scene: flocks, materials and bloom together.
+
+# Roadmap
+roadmap.eyebrow = Roadmap
+roadmap.title = What works, what’s growing, what isn’t there yet.
+roadmap.lead = No dates. Features land when one of our games needs them, and we ship them when they work — not when they look good on a list.
+roadmap.callout.title = Early development
+roadmap.callout.body = The API will change. Pin a release tag if you build on Aphyn, and read the release notes before you move to the next one.
+roadmap.works.ecs = ECS with systems run in parallel by data access
+roadmap.works.render = Rendering through Aphyn’s own FFI-safe API: lit materials, normal maps, bloom, debug gizmos
+roadmap.works.ui = UI: text, images, alignment, masks
+roadmap.works.audio = Audio clip playback
+roadmap.works.collision = Collision detection, six shapes
+roadmap.works.prefabs = Prefabs and scenes as JSON
+roadmap.works.build = Standalone builds with
+roadmap.works.platforms = Windows and Linux, x86_64
+roadmap.growing.physics = Physics — first version in v0.21: rigid bodies, materials, collision layers
+roadmap.growing.editor.before = The editor, built on the engine itself; ships as the
+roadmap.growing.editor.after = binary
+roadmap.growing.rendering = More customisable rendering: vertex and instance buffers in the public API
+roadmap.growing.reload = Live reload of assets and live recompile of scripts
+roadmap.not_yet.animation = Animation
+roadmap.not_yet.shadows = Shadows
+roadmap.not_yet.skybox = Skybox
+roadmap.not_yet.ssr = Screen-space reflections
+roadmap.not_yet.profiler = Profiler
+roadmap.not_yet.docking = Editor window docking
+roadmap.not_yet.platforms = macOS, web and consoles
+roadmap.not_yet.comment = // no “coming soon”. when it ships, it moves left.
+roadmap.releases.title = Recent releases
+roadmap.releases.body.before = The newest releases of the engine, straight from GitHub. The working list lives in
+roadmap.releases.body.after = in the repo.
+roadmap.releases.all = All releases on GitHub
+roadmap.releases.empty = The release list could not be loaded right now. All releases are on GitHub.
+
+# 404
+nf.code = 404 · not found
+nf.title = Nothing grows here.
+nf.body = This page moved or never existed. Check the address, or pick up from one of these.
+nf.home = Back to the start
+nf.comment = // thread 'main' panicked: page not found. it is always the url.

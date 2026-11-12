@@ -1,0 +1,31 @@
+:root{
+/* Radii — small and honest in the editor; only the berry itself is round */
+--radius-0:0;--radius-xs:2px;--radius-sm:3px;--radius-md:5px;--radius-lg:8px;--radius-xl:12px;--radius-full:999px;
+--radius-control:var(--radius-sm);--radius-panel:var(--radius-md);--radius-card:var(--radius-lg);
+/* Borders */
+--border-w:1px;--focus-ring:0 0 0 2px var(--bg-app),0 0 0 3px var(--border-focus);
+/* Shadows — dark-first: depth comes from borders + surface steps; shadows only for floating layers */
+--shadow-none:none;
+--shadow-1:0 1px 0 rgba(0,0,0,.3);
+--shadow-2:0 4px 12px rgba(5,4,10,.36),0 1px 2px rgba(5,4,10,.4);
+--shadow-3:0 12px 32px rgba(5,4,10,.5),0 2px 6px rgba(5,4,10,.4);
+--shadow-inset:inset 0 1px 0 rgba(255,255,255,.04);
+/* Motion — calm, quick, no bounce */
+--ease-out:cubic-bezier(.2,0,0,1); /* @kind other */
+--ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
+--dur-instant:60ms; /* @kind other */
+--dur-fast:120ms; /* @kind other */
+--dur-base:180ms; /* @kind other */
+--dur-slow:280ms; /* @kind other */
+--z-dock:10; /* @kind other */
+--z-menu:100; /* @kind other */
+--z-tooltip:200; /* @kind other */
+--z-dialog:300; /* @kind other */
+--z-toast:400; /* @kind other */
+}
+[data-theme="light"]{
+--shadow-1:0 1px 2px rgba(20,19,28,.06);
+--shadow-2:0 4px 14px rgba(20,19,28,.08),0 1px 3px rgba(20,19,28,.06);
+--shadow-3:0 16px 40px rgba(20,19,28,.14),0 2px 6px rgba(20,19,28,.06);
+--shadow-inset:none;
+}

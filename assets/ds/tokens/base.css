@@ -1,0 +1,8 @@
+/* Minimal base — consumers get fonts, colors and link styling out of the box. */
+html{color-scheme:dark}
+[data-theme="light"]{color-scheme:light}
+body{margin:0;background:var(--bg-app);color:var(--text-1);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
+a{color:var(--text-link);text-decoration:none}
+a:hover{color:var(--text-link-hover);text-decoration:underline;text-underline-offset:2px}
+code,kbd,pre{font-family:var(--font-mono)}
+::selection{background:var(--bilberry-500);color:#fff}

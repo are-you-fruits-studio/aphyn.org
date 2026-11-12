@@ -1,0 +1,33 @@
+# Rust / Cargo
+/target/
+# Local Cargo settings can hold registry tokens
+/.cargo/config.toml
+/.cargo/credentials*
+
+# Trunk build output
+/dist/
+
+# Release data the deploy workflow downloads at build time
+/releases.json
+
+# Local environment and secrets (never commit them)
+.env
+.env.*
+!.env.example
+.envrc
+.direnv/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs
+*.log
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db

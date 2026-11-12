@@ -1,0 +1,194 @@
+# Українська. Ключі — як у en.txt; чого тут немає, береться з en.txt.
+# Формат: `ключ = значення`, `\n` — перенесення рядка.
+
+title.home = Aphyn · 3D-рушій для ігор на Rust
+title.examples = Приклади · Aphyn
+title.roadmap = Дорожня карта · Aphyn
+title.not_found = Сторінку не знайдено · Aphyn
+
+# Шапка й навігація
+nav.skip = Перейти до вмісту
+nav.home = Aphyn — на головну
+nav.label = Головне меню
+nav.language = Мова
+nav.docs = Документація
+nav.examples = Приклади
+nav.roadmap = Дорожня карта
+nav.releases = Випуски
+nav.github = Aphyn на GitHub
+nav.menu = Меню
+theme.to_light = Увімкнути світлу тему
+theme.to_dark = Увімкнути темну тему
+
+# Футер
+footer.about = 3D-рушій для ігор на Rust. Виріс у Карпатах, працює на Windows і Linux.
+footer.engine = Рушій
+footer.project = Проєкт
+footer.studio = Студія
+footer.issues = Задачі
+footer.contributing = Як долучитися
+footer.site_source = Код сайту
+footer.licenses = Ліцензії
+
+# Спільне
+common.new = нове
+status.works = Уже працює
+status.growing = У розробці
+status.not_yet = Ще немає
+code.copy = Копіювати код
+code.copied = Скопійовано
+code.tabs_label = Код для швидкого старту
+
+# Головна — перший екран
+home.badge.early = Рання стадія розробки
+home.badge.latest = останній випуск
+home.hero.title = 3D-рушій на Rust, що виріс зі справжніх ігор.
+home.hero.lead = Aphyn — рушій, який are-you-fruits-studio розробляє для власних ігор. Він відкритий: читайте, запускайте, будуйте на ньому своє. В основі — ECS, графіка — через власний FFI-безпечний API, а весь код — один робочий простір Cargo з невеликих пакетів.
+home.hero.cta = Запустити приклад
+home.hero.source = Вихідний код
+home.meta.since = з травня 2024 року
+home.showcase.alt = Приклад showcase: три зграї невеликих освітлених фігур кружляють довкола глянцевої чорнично-синьої сфери в темній кімнаті з плиткою. Лічильник у кутку показує 461 сутність.
+home.showcase.caption = examples/showcase · 461 сутність, у реальному часі
+
+# Головна — чому
+home.why.eyebrow = Чому Aphyn
+home.why.title = Маленький, темний і корисніший, ніж здається.
+home.why.crates.title = Невеликі пакети
+home.why.crates.body = Один робочий простір Cargo, увесь код відкритий. Будь-яку частину рушія можна прочитати тієї ж миті, коли стало цікаво, як вона працює.
+home.why.data.title = Спершу дані
+home.why.data.body = Системи оголошують, які дані їм потрібні. Планувальник запускає їх паралельно на всіх ядрах процесора.
+home.why.grown.title = Виріс зі справжніх ігор
+home.why.grown.body = Aphyn починався як внутрішній рушій студії — Fruits Engine. Нові можливості з’являються тоді, коли їх потребує одна з наших ігор.
+home.why.license.title = Ліцензія, що не зміниться
+home.why.license.body = MIT OR Apache-2.0. Без відрахувань із продажів, без облікового запису, без умов, які раптом перепишуть.
+
+# Головна — можливості
+home.features.eyebrow = Що вже є
+home.features.title = Досить, щоб зрушити з місця невелику гру.
+home.features.body = Для кожного пункту цього списку в репозиторії є приклад, який можна запустити. Чого тут немає, того поки немає — подробиці на дорожній карті.
+home.features.more = Переглянути приклади
+feature.ecs.title = ECS
+feature.ecs.body = Системи працюють паралельно, а розклад залежить від того, які дані їм потрібні
+feature.render.title = Графіка
+feature.render.body = Власний FFI-безпечний API (усередині — wgpu): матеріали з освітленням, карти нормалей, світіння (bloom), налагоджувальні лінії
+feature.ui.title = Інтерфейс
+feature.ui.body = Текст, зображення, вирівнювання, маски
+feature.audio.title = Звук
+feature.audio.body = Відтворення звукових фрагментів через cpal
+feature.collision.title = Виявлення зіткнень
+feature.collision.body = Точка, відрізок, AABB, орієнтований паралелепіпед, сфера, трикутник
+feature.prefabs.title = Шаблони об’єктів і сцени
+feature.prefabs.body = Префаби й сцени зберігаються та завантажуються у форматі JSON
+feature.build.title = Збірка гри
+feature.build.body = aphyn build пакує запускач, бібліотеку гри та її ресурси
+feature.physics.title = Фізика
+feature.physics.body = Перша версія у v0.21: тверді тіла й шари зіткнень
+
+# Головна — швидкий старт
+home.quick.eyebrow = Швидкий старт
+home.quick.title = Клонуйте. Запустіть. Передайте теку.
+home.quick.need.before = Потрібен найновіший стабільний Rust (редакція 2024) — спершу виконайте
+home.quick.need.after = . Перша збірка в режимі --release триває кілька хвилин.
+home.quick.pin = Aphyn ще немає на crates.io, а API змінюється між версіями: закріплюйте мітку випуску, якщо будуєте на ньому щось своє.
+home.quick.step1 = Запустіть приклад із репозиторію
+home.quick.step2 = Напишіть гру як один пакет у
+home.quick.step3 = Зберіть її командою
+home.quick.more = Повний посібник
+code.tab.run = Запустити приклад
+code.run.body = git clone https://github.com/are-you-fruits-studio/aphyn.git\ncd aphyn\ncargo run --release -p aphyn_example_cubes\n\n# на Linux (Debian/Ubuntu) спершу:\n# sudo apt-get install -y libasound2-dev libudev-dev pkg-config
+code.run.note = // замість cubes — boids, physics, showcase. див. Приклади.
+code.main.note = // setup_scene і spin — ваші системи. обидві є в прикладі cubes.
+code.cargo.note = // мітка має збігатися з версією виконуваного файлу aphyn, яким ви збираєте.
+code.build.body = aphyn build path/to/my_game\n\n# my_game/builds/\n#   my_game        запускач, названий за текою\n#   lib_app        бібліотека вашої гри\n#   assets/
+code.build.note = // потрібен cargo у PATH. на Windows — короткий шлях без пробілів.
+
+# Головна — стан
+home.status.eyebrow = Чесно про стан
+home.status.title = Рання стадія розробки. API ще змінюватиметься.
+home.status.body = Годиться для прототипів і для того, щоб розібратися, як улаштований рушій. Якщо будуєте на Aphyn, закріплюйте мітку випуску й будьте готові до змін, що ламають сумісність.
+home.status.editor.before = Редактор, написаний на самому рушії. У збірках випусків він постачається як виконуваний файл
+home.status.editor.after = .
+home.status.physics = Фізика — перша версія з’явилася у v0.21.
+home.status.not_yet = Анімація · тіні · небесний куб (skybox) · відбиття в екранному просторі (SSR) · профілювальник · пристиковування вікон редактора · гаряче перезавантаження ресурсів і сценаріїв
+home.status.comment = // краще пообіцяти менше. принаймні воно компілюється.
+home.status.more = Уся дорожня карта
+
+# Головна — назва
+home.name.word = а́фини
+home.name.lede = Так у Карпатах називають чорниці. Маленькі, темні, ростуть на камені й ні в кого не питають дозволу.
+home.name.note = Логотип — ця ягода. Її трипроменева чашечка — це ще й осі X, Y і Z маніпулятора трансформацій. Раніше — Fruits Engine: та сама студія, менше фруктових каламбурів. Але кілька лишилося.
+
+# Головна — стежте за розвитком
+home.follow.title = Стежте за розвитком
+home.follow.body = Зовнішніх запитів на злиття (pull request) поки не приймаємо. Питанням і повідомленням про помилки — завжди раді.
+home.follow.code.title = Читати код
+home.follow.code.body = Кожна зміна з травня 2024 року, разом із прикладами.
+home.follow.issues.eyebrow = Задачі (Issues)
+home.follow.issues.title = Поставити питання чи повідомити про помилку
+home.follow.issues.body = Єдине місце для питань, збоїв і дивної поведінки.
+home.follow.docs.title = Документація
+home.follow.docs.body = Як почати, як зібрати гру, як пакети поєднуються між собою.
+
+# Приклади
+examples.eyebrow = Приклади
+examples.title = Кожна можливість — у дії на вашому комп’ютері.
+examples.lead.before = Кожен приклад — окремий пакет у
+examples.lead.after = . Клонуйте репозиторій, оберіть приклад і запустіть його з кореневої теки. Читати їхній код — найшвидший спосіб опанувати API.
+examples.run = git clone https://github.com/are-you-fruits-studio/aphyn.git\ncd aphyn\ncargo run --release -p aphyn_example_cubes   # замість cubes — будь-яка назва нижче
+examples.featured.title = Почніть звідси
+examples.featured.body = Зграї фігур, матеріали з освітленням і світіння (bloom) в одній сцені: сотні сутностей, які оновлюють паралельні системи, і лічильник сутностей у кутку, що змінюється наживо.
+examples.featured.more = Читати код
+examples.all = Усі приклади
+example.cubes = Найпростіший приклад: освітлена полігональна сітка, що рухається й обертається, і журнал FPS.
+example.ecs = Сутності, компоненти й ресурси без жодного вікна — ECS сам по собі.
+example.boids = Зграя: відштовхування, керування й загасання руху як невеликі паралельні системи.
+example.physics = Тверді тіла, шари зіткнень, кидання мишею. Пробіл додає нові тіла.
+example.collisions = Усі форми колізійних тіл, промені від курсора й допоміжні контури.
+example.gizmos = Налагоджувальні допоміжні лінії й вільна камера.
+example.material = Власний шаблон шейдера й зміна матеріалу для кожної сутності.
+example.normals = Поверхні з картами нормалей і світло, що йде за курсором.
+example.bloom = Одна сцена й постобробка зі світінням (bloom) на яскравих матеріалах.
+example.text = Виведення тексту, що оновлюється кожного кадру.
+example.ui = Компонування інтерфейсу: зображення, вирівнювання й маски.
+example.audio_screen_saver = Відтворення звуку через cpal, а звукові відліки малюються на екрані.
+example.showcase = Сцена з README: зграї, матеріали й світіння (bloom) разом.
+
+# Дорожня карта
+roadmap.eyebrow = Дорожня карта
+roadmap.title = Що працює, що росте, чого ще немає.
+roadmap.lead = Без дат. Можливості з’являються, коли їх потребує одна з наших ігор, і ми випускаємо їх, коли вони працюють, а не коли гарно виглядають у списку.
+roadmap.callout.title = Рання стадія розробки
+roadmap.callout.body = API ще змінюватиметься. Закріплюйте мітку випуску, якщо будуєте на Aphyn, і перед переходом на новий випуск читайте опис його змін.
+roadmap.works.ecs = ECS: системи працюють паралельно, а розклад залежить від того, які дані їм потрібні
+roadmap.works.render = Графіка через власний FFI-безпечний API: освітлені матеріали, карти нормалей, світіння (bloom), налагоджувальні лінії
+roadmap.works.ui = Інтерфейс: текст, зображення, вирівнювання, маски
+roadmap.works.audio = Відтворення звуку
+roadmap.works.collision = Виявлення зіткнень, шість форм
+roadmap.works.prefabs = Шаблони об’єктів (префаби) і сцени у форматі JSON
+roadmap.works.build = Готові до поширення збірки через
+roadmap.works.platforms = Windows і Linux, x86_64
+roadmap.growing.physics = Фізика — перша версія у v0.21: тверді тіла, фізичні матеріали, шари зіткнень
+roadmap.growing.editor.before = Редактор, написаний на самому рушії; постачається як виконуваний файл
+roadmap.growing.editor.after =
+roadmap.growing.rendering = Гнучкіша графіка: буфери вершин і екземплярів у публічному API
+roadmap.growing.reload = Гаряче перезавантаження ресурсів і перекомпіляція сценаріїв на льоту
+roadmap.not_yet.animation = Анімація
+roadmap.not_yet.shadows = Тіні
+roadmap.not_yet.skybox = Небесний куб (skybox)
+roadmap.not_yet.ssr = Відбиття в екранному просторі (SSR)
+roadmap.not_yet.profiler = Профілювальник
+roadmap.not_yet.docking = Пристиковування вікон редактора
+roadmap.not_yet.platforms = macOS, веб і консолі
+roadmap.not_yet.comment = // жодного «незабаром». коли з’явиться — переїде ліворуч.
+roadmap.releases.title = Останні випуски
+roadmap.releases.body.before = Найновіші випуски рушія, просто з GitHub. Робочий список — у файлі
+roadmap.releases.body.after = в репозиторії.
+roadmap.releases.all = Усі випуски на GitHub
+roadmap.releases.empty = Список випусків зараз не вдалося завантажити. Усі випуски є на GitHub.
+
+# 404
+nf.code = 404 · не знайдено
+nf.title = Тут нічого не росте.
+nf.body = Сторінку перенесли або її ніколи не було. Перевірте адресу або почніть звідси.
+nf.home = На головну
+nf.comment = // thread 'main' panicked: сторінку не знайдено. винна завжди адреса.

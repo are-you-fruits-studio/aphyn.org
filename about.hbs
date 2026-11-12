@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Third-party licenses · Aphyn</title>
+  <style>
+    body { margin: 0 auto; max-width: 860px; padding: 32px 16px 64px; font: 15px/1.6 system-ui, sans-serif; color: #14131C; background: #FAF9FC; }
+    @media (prefers-color-scheme: dark) { body { color: #E3E2EA; background: #14131C; } a { color: #9790D4; } }
+    h1 { font-size: 28px; }
+    h2 { margin-top: 40px; font-size: 18px; }
+    pre { white-space: pre-wrap; font-size: 12px; padding: 12px; border: 1px solid rgba(128, 128, 128, .3); border-radius: 5px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Third-party licenses</h1>
+  <p>The aphyn.org site is built from these Rust crates. Fonts and icons have their own notices: <a href="/ds/fonts/OFL.txt">fonts (OFL 1.1)</a>, <a href="/licenses/lucide-LICENSE.txt">icons (ISC)</a>.</p>
+  <h2>Overview</h2>
+  <ul>
+    {{#each overview}}
+    <li>{{name}} ({{count}})</li>
+    {{/each}}
+  </ul>
+  {{#each licenses}}
+  <h2 id="license-{{@index}}">{{name}}</h2>
+  <p>Used by:</p>
+  <ul>
+    {{#each used_by}}
+    <li><a href="{{#if crate.repository}}{{crate.repository}}{{else}}https://crates.io/crates/{{crate.name}}{{/if}}">{{crate.name}} {{crate.version}}</a></li>
+    {{/each}}
+  </ul>
+  <pre>{{text}}</pre>
+  {{/each}}
+</body>
+</html>
