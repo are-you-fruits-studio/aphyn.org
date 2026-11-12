@@ -4,6 +4,8 @@
 title.home = Aphyn · 3D-рушій для ігор на Rust
 title.examples = Приклади · Aphyn
 title.roadmap = Дорожня карта · Aphyn
+title.docs = Документація · Aphyn
+title.releases = Випуски · Aphyn
 title.not_found = Сторінку не знайдено · Aphyn
 
 # Шапка й навігація
@@ -183,8 +185,44 @@ roadmap.not_yet.comment = // жодного «незабаром». коли з�
 roadmap.releases.title = Останні випуски
 roadmap.releases.body.before = Найновіші випуски рушія, просто з GitHub. Робочий список — у файлі
 roadmap.releases.body.after = в репозиторії.
-roadmap.releases.all = Усі випуски на GitHub
+roadmap.releases.all = Усі випуски
 roadmap.releases.empty = Список випусків зараз не вдалося завантажити. Усі випуски є на GitHub.
+
+# Документація
+docs.eyebrow = Документація
+docs.title = Дізнайтеся, як працює Aphyn.
+docs.lead = Документація живе на docs.aphyn.org: посібники, щоб почати, і довідник API, згенерований із вихідного коду рушія. Тут видно, що там є і де ще шукати.
+docs.open = Відкрити docs.aphyn.org
+docs.examples_cta = Вчитися на прикладах
+docs.sections = Де читати
+docs.guide.title = Як почати
+docs.guide.body = Зберіть робочий простір і зорієнтуйтеся в рушії. Перший посібник, далі буде більше.
+docs.api.title = Довідник API
+docs.api.body = Кожен публічний пакет, тип і функція, згенеровані з вихідного коду за допомогою rustdoc.
+docs.readme.title = Гра крок за кроком
+docs.readme.body = README пояснює пакет гри, запускач і aphyn build.
+docs.examples.title = Приклади
+docs.examples.body = Тринадцять пакетів, які можна запустити, по одному на можливість. Їхній код — найшвидший шлях усередину.
+docs.offline.eyebrow = Офлайн
+docs.offline.title = Довідник API на вашому комп’ютері.
+docs.offline.body.before = Довідник на docs.aphyn.org відповідає найновішому коду. Для версії, яку ви закріпили, зберіть його з її мітки командою
+docs.offline.body.after = і тримайте відкритим поруч із редактором.
+docs.offline.code = git clone https://github.com/are-you-fruits-studio/aphyn.git\ncd aphyn\ngit checkout <мітка>\ncargo doc --no-deps --open
+docs.offline.note = // відкриває довідник саме для тієї версії, з якою ви збираєте.
+docs.status.badge = Молода документація
+docs.status.body = Поки що один посібник і згенерований довідник. Нові посібники з’являтимуться, коли рушій усталиться; до того прогалини заповнюють приклади й README.
+
+# Випуски
+releases.eyebrow = Випуски
+releases.title = Кожна версія — це мітка.
+releases.lead = Aphyn ще немає на crates.io. Випуск — це мітка git у репозиторії рушія з описом змін і виконуваним файлом aphyn на GitHub.
+releases.latest = Останній випуск
+releases.notes = Опис змін і завантаження
+releases.download = Виконуваний файл aphyn для aphyn build додано до випуску на GitHub.
+releases.pin_note = // закріпіть мітку; використовуйте aphyn тієї самої версії.
+releases.earlier = Попередні випуски
+releases.all = Усі випуски на GitHub
+releases.callout = API ще змінюється між версіями. Перед переходом на нову мітку читайте опис змін.
 
 # 404
 nf.code = 404 · не знайдено

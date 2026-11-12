@@ -110,10 +110,10 @@ pub fn home(props: &PageProps) -> Html {
                             <li><span class="num">{ "02" }</span><span>{ with_code(t("home.quick.step2"), "scripts/", "") }</span></li>
                             <li><span class="num">{ "03" }</span><span>{ with_code(t("home.quick.step3"), "aphyn build", "") }</span></li>
                         </ol>
-                        <a class="more" href={DOCS_URL}>
+                        <NavLink class="more" to={Page::Docs.route(lang)}>
                             { t("home.quick.more") }
                             <Icon name="arrow-right" />
-                        </a>
+                        </NavLink>
                     </div>
                     <QuickStartCode lang={lang} version={version.clone()} />
                 </div>

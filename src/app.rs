@@ -4,7 +4,10 @@ use yew_router::prelude::*;
 use crate::components::footer::Footer;
 use crate::components::header::Header;
 use crate::i18n::Lang;
-use crate::pages::{examples::Examples, home::Home, not_found::NotFound, roadmap::Roadmap};
+use crate::pages::{
+    docs::Docs, examples::Examples, home::Home, not_found::NotFound, releases::Releases,
+    roadmap::Roadmap,
+};
 use crate::releases::ReleasesProvider;
 use crate::route::{Page, Route};
 use crate::theme::Theme;
@@ -68,7 +71,9 @@ fn layout(props: &LayoutProps) -> Html {
     let content = match page {
         Page::Home => html! { <Home {lang} /> },
         Page::Examples => html! { <Examples {lang} /> },
+        Page::Docs => html! { <Docs {lang} /> },
         Page::Roadmap => html! { <Roadmap {lang} /> },
+        Page::Releases => html! { <Releases {lang} /> },
         Page::NotFound => html! { <NotFound {lang} /> },
     };
 
@@ -87,7 +92,9 @@ fn title(page: Page, lang: Lang) -> &'static str {
     lang.t(match page {
         Page::Home => "title.home",
         Page::Examples => "title.examples",
+        Page::Docs => "title.docs",
         Page::Roadmap => "title.roadmap",
+        Page::Releases => "title.releases",
         Page::NotFound => "title.not_found",
     })
 }
