@@ -5,6 +5,8 @@
 title.home = Aphyn · a 3D game engine in Rust
 title.examples = Examples · Aphyn
 title.roadmap = Roadmap · Aphyn
+title.docs = Documentation · Aphyn
+title.releases = Releases · Aphyn
 title.not_found = Page not found · Aphyn
 
 # Header and navigation
@@ -184,8 +186,44 @@ roadmap.not_yet.comment = // no “coming soon”. when it ships, it moves left.
 roadmap.releases.title = Recent releases
 roadmap.releases.body.before = The newest releases of the engine, straight from GitHub. The working list lives in
 roadmap.releases.body.after = in the repo.
-roadmap.releases.all = All releases on GitHub
+roadmap.releases.all = All releases
 roadmap.releases.empty = The release list could not be loaded right now. All releases are on GitHub.
+
+# Docs
+docs.eyebrow = Documentation
+docs.title = Learn how Aphyn works.
+docs.lead = The documentation lives on docs.aphyn.org: guides to get going and an API reference generated from the engine’s source. This page shows what is there and where else to look.
+docs.open = Open docs.aphyn.org
+docs.examples_cta = Learn from the examples
+docs.sections = Where to read
+docs.guide.title = Getting started
+docs.guide.body = Build the workspace and find your way around the engine. The first guide, with more to come.
+docs.api.title = API reference
+docs.api.body = Every public crate, type and function, generated from the source with rustdoc.
+docs.readme.title = Build a game, step by step
+docs.readme.body = The README walks through the game crate, the launcher and aphyn build.
+docs.examples.title = Examples
+docs.examples.body = Thirteen runnable crates, one per feature. Reading their source is the fastest way in.
+docs.offline.eyebrow = Read offline
+docs.offline.title = The API reference, on your machine.
+docs.offline.body.before = The reference on docs.aphyn.org follows the latest code. For the version you pinned, build it from that tag with
+docs.offline.body.after = and keep it open next to your editor.
+docs.offline.code = git clone https://github.com/are-you-fruits-studio/aphyn.git\ncd aphyn\ngit checkout <tag>\ncargo doc --no-deps --open
+docs.offline.note = // opens the reference for exactly the version you build against.
+docs.status.badge = Young docs
+docs.status.body = One guide so far, plus the generated reference. More guides land as the engine settles; until then the examples and the README fill the gaps.
+
+# Releases
+releases.eyebrow = Releases
+releases.title = Every version is a tag.
+releases.lead = Aphyn isn’t on crates.io yet. A release is a git tag in the engine repository, with release notes and the aphyn binary on GitHub.
+releases.latest = Latest release
+releases.notes = Release notes and downloads
+releases.download = The aphyn binary for aphyn build is attached to the release on GitHub.
+releases.pin_note = // pin the tag; use the aphyn binary of the same version.
+releases.earlier = Earlier releases
+releases.all = All releases on GitHub
+releases.callout = The API still changes between versions. Read the release notes before you move to a newer tag.
 
 # 404
 nf.code = 404 · not found

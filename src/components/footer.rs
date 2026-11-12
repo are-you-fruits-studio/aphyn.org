@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use super::header::{DOCS_URL, RELEASES_URL, REPO_URL};
+use super::header::REPO_URL;
 use super::logo::Logo;
 use super::nav_link::NavLink;
 use crate::i18n::Lang;
@@ -49,10 +49,10 @@ pub fn footer(props: &FooterProps) -> Html {
                 </div>
                 <nav class="footer-nav" aria-labelledby="footer-engine">
                     <h2 id="footer-engine">{ lang.t("footer.engine") }</h2>
-                    <a href={DOCS_URL}>{ lang.t("nav.docs") }</a>
+                    <NavLink to={Page::Docs.route(lang)}>{ lang.t("nav.docs") }</NavLink>
                     <NavLink to={Page::Examples.route(lang)}>{ lang.t("nav.examples") }</NavLink>
                     <NavLink to={Page::Roadmap.route(lang)}>{ lang.t("nav.roadmap") }</NavLink>
-                    <a href={RELEASES_URL}>{ lang.t("nav.releases") }</a>
+                    <NavLink to={Page::Releases.route(lang)}>{ lang.t("nav.releases") }</NavLink>
                 </nav>
                 <nav class="footer-nav" aria-labelledby="footer-project">
                     <h2 id="footer-project">{ lang.t("footer.project") }</h2>
