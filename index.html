@@ -1,21 +1,52 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aphyn game engine</title>
-<meta name="description" content="Aphyn is a game engine and editor written in Rust by are-you-fruits-studio.">
-<style>
-html,body{height:100%;margin:0}
-body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:#14131C;color:#E8E6F0;font-family:system-ui,sans-serif;text-align:center;padding:0 16px}
-h1{margin:0;font-size:3rem;color:#7870C4;letter-spacing:-.02em}
-p{margin:0;opacity:.8}
-a{color:#7870C4}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aphyn · a 3D game engine in Rust</title>
+  <meta name="description" content="Aphyn is a 3D game engine in Rust that are-you-fruits-studio builds for its own games. ECS at the core, open for anyone to read, run and build on.">
+  <meta name="theme-color" content="#14131C">
+  <meta property="og:title" content="Aphyn · a 3D game engine in Rust">
+  <meta property="og:description" content="A 3D game engine in Rust, grown from real games.">
+  <meta property="og:url" content="https://aphyn.org/">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Before anything paints: pick the theme (saved choice, else the system
+       setting, else dark), drop a trailing slash GitHub Pages adds to
+       language folders (/uk/ → /uk), and set `lang` from the URL. -->
+  <script>
+    (function () {
+      var theme = 'dark';
+      try {
+        var saved = localStorage.getItem('aphyn-theme');
+        if (saved === 'light' || saved === 'dark') theme = saved;
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) theme = 'light';
+      } catch (e) {}
+      document.documentElement.setAttribute('data-theme', theme);
+      var path = location.pathname;
+      if (path.length > 1 && path.charAt(path.length - 1) === '/') {
+        path = path.slice(0, -1);
+        history.replaceState(null, '', path + location.search + location.hash);
+      }
+      var first = path.split('/')[1];
+      if (first && /^[a-z]{2,3}(-[A-Za-z0-9]+)?$/.test(first)) document.documentElement.lang = first;
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/ds/styles.css">
+  <link data-trunk rel="css" href="assets/site.css">
+
+  <link data-trunk rel="copy-dir" href="assets/ds">
+  <link data-trunk rel="copy-dir" href="assets/img">
+  <link data-trunk rel="copy-dir" href="assets/licenses">
+  <link data-trunk rel="copy-file" href="assets/favicon.svg">
+  <link data-trunk rel="copy-file" href="CNAME">
+  <link data-trunk rel="rust" data-wasm-opt="z">
 </head>
 <body>
-<h1>aphyn</h1>
-<p>A game engine and editor written in Rust. Website coming soon.</p>
-<p><a href="https://github.com/are-you-fruits-studio">GitHub</a></p>
+  <noscript>
+    <p style="padding: 24px; font-family: system-ui, sans-serif;">Aphyn is a 3D game engine in Rust. This site needs JavaScript; the source is at <a href="https://github.com/are-you-fruits-studio/aphyn">github.com/are-you-fruits-studio/aphyn</a>.</p>
+  </noscript>
 </body>
 </html>

@@ -1,0 +1,19 @@
+/* Aphyn — color primitives. Named after the bilberry (afyny) and its Carpathian surroundings. */
+:root{
+/* Bilberry — deep blue-violet, primary. 600 is the brand swatch. */
+--bilberry-50:#EEEDF8;--bilberry-100:#DAD8F0;--bilberry-200:#B9B5E3;--bilberry-300:#9790D4;--bilberry-400:#7870C4;--bilberry-500:#5A51AE;--bilberry-600:#3B3486;--bilberry-700:#2F2A6C;--bilberry-800:#241F52;--bilberry-900:#19163A;--bilberry-950:#100E26;
+/* Bloom — the dusty grey-blue wax coating on the berry. Secondary / info. */
+--bloom-50:#F1F4F9;--bloom-100:#E1E7F1;--bloom-200:#C6D1E4;--bloom-300:#ABBAD6;--bloom-400:#8FA3C7;--bloom-500:#7287B0;--bloom-600:#586C93;--bloom-700:#435372;--bloom-800:#2F3A51;--bloom-900:#1E2534;
+/* Leaf — muted mountain green. Accent / success. */
+--leaf-100:#E3EDE1;--leaf-200:#C3D8BF;--leaf-300:#93B98D;--leaf-400:#6E9B67;--leaf-500:#4F7A4A;--leaf-600:#3E6139;--leaf-700:#2E482B;
+/* Juice — purple-magenta. Highlights only, sparingly. */
+--juice-100:#F0E4F6;--juice-200:#DCC0EA;--juice-300:#BD8DD6;--juice-400:#9D62BE;--juice-500:#7B3FA0;--juice-600:#63317F;--juice-700:#4A245F;
+/* Resin — pine resin amber. Warning. */
+--resin-100:#F6EAD5;--resin-300:#E0BA78;--resin-400:#D4A458;--resin-500:#C8913A;--resin-700:#8A6022;
+/* Rowan — rowan-berry red. Danger / error. */
+--rowan-100:#F6DEDA;--rowan-300:#E08A80;--rowan-400:#D2675B;--rowan-500:#C4473A;--rowan-700:#8A2E25;
+/* Night — violet-tinted neutrals. Dark-first. */
+--night-1000:#0B0A10;--night-950:#0E0D14;--night-900:#14131C;--night-850:#191822;--night-800:#1F1E2A;--night-750:#262533;--night-700:#2E2D3D;--night-600:#3A394C;--night-500:#535268;--night-400:#75748C;--night-300:#9C9BB0;--night-200:#C4C3D2;--night-100:#E3E2EA;--night-50:#F3F2F7;--paper:#FAF9FC;--white:#FFFFFF;
+/* Gizmo axes (editor viewport) */
+--axis-x:#D2675B;--axis-y:#6E9B67;--axis-z:#7287B0;
+}

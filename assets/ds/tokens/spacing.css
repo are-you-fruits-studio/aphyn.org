@@ -1,0 +1,7 @@
+:root{
+--space-0:0;--space-px:1px;--space-0-5:2px;--space-1:4px;--space-1-5:6px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-24:96px;--space-32:128px;
+/* Editor density */
+--row-h:22px;--control-h-sm:20px;--control-h:24px;--control-h-lg:32px;--panel-header-h:26px;--toolbar-h:32px;--menubar-h:26px;--statusbar-h:22px;
+/* Web layout */
+--content-max:1200px;--prose-max:720px;--docs-sidebar-w:264px;--docs-toc-w:220px;
+}
