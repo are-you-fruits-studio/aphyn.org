@@ -20,5 +20,9 @@ updates:
       prefix: build
       include: scope
     groups:
+      # yew-router is built against one yew version: bump them together,
+      # or each PR alone pulls two yews and fails to compile.
+      yew:
+        patterns: ["yew", "yew-router"]
       cargo:
         update-types: [minor, patch]
