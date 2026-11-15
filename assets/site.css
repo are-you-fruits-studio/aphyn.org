@@ -234,6 +234,7 @@ img { max-width: 100%; }
 .featured-text { padding: 8px clamp(4px, 2vw, 16px) 8px 4px; }
 .featured-text h2 { margin: 16px 0 12px; font-family: var(--font-display); font-size: 28px; line-height: 1.15; font-weight: 700; letter-spacing: -0.03em; }
 .featured-text p { margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: var(--text-2); }
+.featured-text .featured-note { margin: -8px 0 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
 .ex-card {
   display: flex;
   flex-direction: column;
@@ -250,7 +251,31 @@ img { max-width: 100%; }
 .ex-name { display: flex; align-items: center; gap: 10px; color: var(--accent-fg); }
 .ex-name span { font-family: var(--font-mono); font-size: 15px; font-weight: 600; color: var(--text-1); }
 .ex-card p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--text-2); }
-.ex-card code { margin-top: auto; padding-top: 8px; font-size: 12px; color: var(--text-3); overflow-wrap: anywhere; }
+.ex-foot { margin-top: auto; padding-top: 8px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; font-family: var(--font-mono); font-size: 12px; }
+.ex-foot code { color: var(--text-3); overflow-wrap: anywhere; }
+.ex-controls { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: 3px; background: var(--surface-active); color: var(--text-2); }
+.ex-toolbar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 24px; margin-bottom: 20px; }
+.ex-toolbar .h3 { margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-2);
+  font: 500 14px/1 var(--font-sans);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.chip:hover { border-color: var(--border-strong); color: var(--text-1); }
+.chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-fg); }
+.chip-count { font-family: var(--font-mono); font-size: 12px; color: var(--text-3); }
+.code-stack { display: flex; flex-direction: column; gap: 16px; }
+.body-sm { font-size: 15px; color: var(--text-3); }
 .h3 { margin: 0 0 24px; font-family: var(--font-display); font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
 
 /* Roadmap releases */
@@ -347,7 +372,6 @@ img { max-width: 100%; }
 .badge.success { background: var(--success-soft); color: var(--success); }
 .badge.warning { background: var(--warning-soft); color: var(--warning); }
 .badge.info { background: var(--info-soft); color: var(--info); }
-.badge.highlight { background: var(--highlight-soft); color: var(--highlight); }
 
 .card {
   display: flex;
