@@ -7,7 +7,6 @@ pub enum Tone {
     Success,
     Warning,
     Info,
-    Highlight,
 }
 
 impl Tone {
@@ -18,7 +17,6 @@ impl Tone {
             Tone::Success => "success",
             Tone::Warning => "warning",
             Tone::Info => "info",
-            Tone::Highlight => "highlight",
         }
     }
 }

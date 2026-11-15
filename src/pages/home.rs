@@ -56,7 +56,7 @@ pub fn home(props: &PageProps) -> Html {
                     <img src="/img/showcase.gif" width="800" height="450" alt={t("home.showcase.alt")} />
                     <figcaption>
                         <span>{ t("home.showcase.caption") }</span>
-                        <code>{ "cargo run --release -p aphyn_example_showcase" }</code>
+                        <code>{ "cargo run --release --manifest-path examples/showcase/scripts/Cargo.toml" }</code>
                     </figcaption>
                 </figure>
             </div>
