@@ -33,7 +33,8 @@ pub struct Locale {
     pub label: &'static str,
     /// The language's own name, for screen readers and link titles.
     pub name: &'static str,
-    source: &'static str,
+    /// The locale file, `key = value` per line.
+    pub(crate) source: &'static str,
 }
 
 /// All languages of the site. The first one is the default.
