@@ -14,7 +14,7 @@ const ASSETS_URL: &str =
 
 /// The `[lib]`, `[[bin]]` and engine dependency every example's `scripts/Cargo.toml` shares.
 const CARGO_TOML: &str = r#"[lib]
-name = "lib_app"
+name = "aphynapp"
 crate-type = ["cdylib", "lib"]
 
 [[bin]]
@@ -22,7 +22,7 @@ name = "launcher"
 path = "src/main.rs"
 
 [dependencies]
-aphyn = { git = "https://github.com/are-you-fruits-studio/aphyn", tag = "v0.21.1" }"#;
+aphyn = { git = "https://github.com/are-you-fruits-studio/aphyn", tag = "v0.23.0" }"#;
 
 /// Topics for the filter, in the order the chips appear.
 #[derive(Clone, Copy, PartialEq)]

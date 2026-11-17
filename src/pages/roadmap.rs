@@ -20,14 +20,13 @@ pub fn roadmap(props: &PageProps) -> Html {
         html! { <li><span class={class}><Icon name={icon} /></span><span>{ text }</span></li> }
     };
     let works = ["ecs", "render", "ui", "audio", "collision", "prefabs"];
-    let growing = ["physics", "rendering", "reload"];
+    let growing = ["physics", "editor_tools"];
     let not_yet = [
         "animation",
         "shadows",
         "skybox",
         "ssr",
         "profiler",
-        "docking",
         "platforms",
     ];
 
