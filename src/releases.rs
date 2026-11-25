@@ -16,7 +16,7 @@ use crate::i18n::Lang;
 /// The version baked in at build time; the last known release otherwise.
 pub const BUILD_VERSION: &str = match option_env!("APHYN_VERSION") {
     Some(v) => v,
-    None => "v0.23.0",
+    None => "v0.24.0",
 };
 
 #[derive(Clone, Debug, PartialEq)]

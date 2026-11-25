@@ -128,7 +128,7 @@ pub fn home(props: &PageProps) -> Html {
                         <div class="panel-head"><Badge tone={Tone::Info} dot=true>{ t("status.growing") }</Badge></div>
                         <ul class="list">
                             <li>{ with_code(t("home.status.editor.before"), "aphyn", t("home.status.editor.after")) }</li>
-                            <li>{ t("home.status.physics") }</li>
+                            <li>{ t("home.status.render") }</li>
                         </ul>
                     </div>
                     <div class="panel">

@@ -19,16 +19,17 @@ pub fn roadmap(props: &PageProps) -> Html {
     let item = |icon: &'static str, class: &'static str, text: Html| {
         html! { <li><span class={class}><Icon name={icon} /></span><span>{ text }</span></li> }
     };
-    let works = ["ecs", "render", "ui", "audio", "collision", "prefabs"];
-    let growing = ["physics", "editor_tools"];
-    let not_yet = [
-        "animation",
-        "shadows",
-        "skybox",
-        "ssr",
-        "profiler",
-        "platforms",
+    let works = [
+        "ecs",
+        "render",
+        "ui",
+        "audio",
+        "collision",
+        "physics",
+        "prefabs",
     ];
+    let growing = ["editor_tools", "render"];
+    let not_yet = ["joints", "animation", "shadows", "profiler", "platforms"];
 
     html! {
         <>
@@ -52,9 +53,8 @@ pub fn roadmap(props: &PageProps) -> Html {
                     <div class="panel">
                         <div class="panel-head"><Badge tone={Tone::Info} dot=true>{ t("status.growing") }</Badge></div>
                         <ul class="list icons">
-                            { item("refresh-cw", "grow", html! { t("roadmap.growing.physics") }) }
                             { item("refresh-cw", "grow", with_code(t("roadmap.growing.editor.before"), "aphyn", t("roadmap.growing.editor.after"))) }
-                            { for growing.iter().skip(1).map(|k| item("refresh-cw", "grow", html! { lang.t(&format!("roadmap.growing.{k}")) })) }
+                            { for growing.iter().map(|k| item("refresh-cw", "grow", html! { lang.t(&format!("roadmap.growing.{k}")) })) }
                         </ul>
                     </div>
                     <div class="panel">
