@@ -1,0 +1,69 @@
+name: Attribution
+
+# Every commit here is authored by a person under their own GitHub identity.
+# This check rejects commits authored or committed as an AI (Claude), AI
+# co-author trailers, and AI attribution lines in commits and PR text.
+# Issues are not checked.
+
+on:
+  push:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  attribution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check commits and pull request text
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          identity='claude|anthropic'
+          text='^[[:space:]]*(co-authored-by|claude-session):.*(claude|anthropic)|generated with.*claude|claude\.(ai|com)/code'
+
+          if [ "$EVENT" = pull_request ]; then
+            range="$PR_BASE..$PR_HEAD"
+          elif [ -z "$BEFORE" ] || [ "$BEFORE" = 0000000000000000000000000000000000000000 ]; then
+            range="$AFTER"
+          else
+            range="$BEFORE..$AFTER"
+          fi
+
+          bad=0
+          for c in $(git rev-list "$range"); do
+            who="$(git show -s --format='%an <%ae> / %cn <%ce>' "$c")"
+            if printf '%s' "$who" | grep -qiE "$identity"; then
+              echo "::error::$c is authored or committed as an AI: $who"
+              bad=1
+            fi
+            if git show -s --format=%B "$c" | grep -qiE "$text"; then
+              echo "::error::$c has an AI co-author or attribution line in its message"
+              bad=1
+            fi
+          done
+
+          if [ "$EVENT" = pull_request ] && printf '%s\n%s' "$PR_TITLE" "$PR_BODY" | grep -qiE "$text"; then
+            echo "::error::The pull request title or description has an AI attribution line"
+            bad=1
+          fi
+
+          if [ "$bad" -ne 0 ]; then
+            echo "Commit under your own identity, without AI co-author or attribution lines (see CLAUDE.md)."
+            exit 1
+          fi
+          echo "No AI authorship or attribution found."

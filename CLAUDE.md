@@ -15,6 +15,7 @@ aphyn.org is the website of the Aphyn game engine: a Yew app compiled to WebAsse
   - Breaking changes (URLs, removed pages) get a `!` after the type and a `BREAKING CHANGE:` footer.
 - The body, when needed, says why the change is made, wrapped at 72 characters.
 - **No co-author or AI attribution trailers.** Never add `Co-Authored-By:`, `Claude-Session:` or similar lines to commits in this repository.
+- **No AI authorship.** Claude is never an author, committer or co-author here. Every commit is authored and committed by a person under their own GitHub identity, never as `Claude <noreply@anthropic.com>` or another AI identity. Before committing, check `git config user.name` and `git config user.email`; if they are unset or name an AI, stop and ask instead of committing. Commit messages, PR titles and PR descriptions never carry "Generated with Claude Code" or similar lines. The `Attribution` workflow (`.github/workflows/attribution.yml`) rejects any of these, and `main` requires it to pass. Issues are exempt.
 
 ## Pull requests
 
